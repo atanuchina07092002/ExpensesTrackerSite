@@ -1,0 +1,26 @@
+.custom-footer {
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  font-size: 0.95rem;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-icon {
+  font-size: 1.3rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-icon:hover {
+  color: #ffe66d;
+  transform: scale(1.2);
+}
+
+/* Optional sticky footer */
+.custom-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-white" routerLink="/">💰 Expenses Tracker</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav" *ngIf="(status | async) != null">
+        <a class="nav-item nav-link text-white mx-2" routerLink="add" routerLinkActive="active-link"
+          >Add Transaction</a
+        >
+        <a
+          class="nav-item nav-link text-white mx-2"
+          routerLink="signup"
+          routerLinkActive="active-link"
+          >Sign Up</a
+        >
+        <a
+          class="nav-item nav-link text-white mx-2"
+          routerLink="login"
+          routerLinkActive="active-link"
+          >Login</a
+        >
+        <button class="nav-item nav-link text-white mx-2" (click)="LogOut()">LogOut</button>
+      </div>
+      <div class="navbar-nav" *ngIf="(status | async) == null">
+        <a
+          class="nav-item nav-link text-white mx-2"
+          routerLink="signup"
+          routerLinkActive="active-link"
+          >Sign Up</a
+        >
+        <a
+          class="nav-item nav-link text-white mx-2"
+          routerLink="login"
+          routerLinkActive="active-link"
+          >Login</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

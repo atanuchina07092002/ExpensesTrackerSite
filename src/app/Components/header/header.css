@@ -1,0 +1,29 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 1.5rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffe66d;
+  transform: scale(1.05);
+}
+
+.active-link {
+  border-bottom: 2px solid #ffe66d;
+  color: #ffe66d !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}

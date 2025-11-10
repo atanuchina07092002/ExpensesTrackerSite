@@ -1,0 +1,46 @@
+/* Full-page center alignment */
+.transaction-form-container {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+/* Form box */
+.custom-form-wrapper {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+/* Inputs */
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.2);
+}
+
+/* Button gradient */
+.btn-gradient {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: scale(1.02);
+}
+
+/* Disable button */
+.btn-gradient:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}

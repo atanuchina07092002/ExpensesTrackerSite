@@ -1,0 +1,73 @@
+<div class="container my-5">
+  <!-- Summary Cards -->
+  <div class="row text-center mb-4">
+    <div class="col-md-4 mb-3">
+      <div class="summary-card bg-success text-white">
+        <h5>Total Income</h5>
+        <h2>{{ totalIncome }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="summary-card bg-danger text-white">
+        <h5>Total Expenses</h5>
+        <h2>{{ totalExpenses }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="summary-card bg-success text-white">
+        <h5>Net Balance</h5>
+        <h2>{{ totalBalance }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transactions Table -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h4 class="mb-4">Transactions</h4>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tran of transaction">
+              <td>{{ tran.createdAt }}</td>
+              <td [ngClass]="tran.type === 'Expense' ? 'bg-danger' : 'bg-success'">
+                {{ tran.type }}
+              </td>
+              <td>{{ tran.category }}</td>
+              <td>{{ tran.amount }}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-success"
+                  type="button"
+                  aria-label="Edit transaction"
+                  (click)="updateTransaction(tran)"
+                >
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  type="button"
+                  aria-label="Delete transaction"
+                  (click)="deleteTransaction(tran)"
+                >
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

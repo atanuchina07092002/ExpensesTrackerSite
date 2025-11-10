@@ -1,0 +1,74 @@
+<div class="transaction-form-container">
+  <h4 class="form-title text-center mb-4">{{ transactionMode ? 'Update' : 'Add' }} Transaction</h4>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" class="p-4 shadow custom-form">
+    <!-- Transaction Type -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold" for="type">Type</label>
+      <select formControlName="type" class="form-select" id="type">
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+      </select>
+    </div>
+
+    <!-- Category -->
+    <div class="mb-3">
+      <label for="category" class="form-label fw-semibold">Category</label>
+      <select formControlName="category" class="form-select" id="category">
+        <option *ngFor="let cat of transactionCategories" [value]="cat">{{ cat }}</option>
+      </select>
+      <div
+        class="text-danger small mt-1"
+        *ngIf="transactionForm.get('category')?.invalid && transactionForm.get('category')?.touched"
+      >
+        Category is required
+      </div>
+    </div>
+
+    <!-- Amount -->
+    <div class="mb-3">
+      <label for="amount" class="form-label fw-semibold">Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="amount"
+        id="amount"
+        placeholder="Enter amount"
+      />
+      <div
+        class="text-danger small mt-1"
+        *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched"
+      >
+        Amount must be greater than 0
+      </div>
+    </div>
+    <div class="mb-3" *ngIf="transactionMode !== true">
+      <label for="createdAt" class="form-label fw-semibold">CreatedAt</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="createdAt"
+        id="createdAt"
+        placeholder="mm/dd/yyyy"
+      />
+      <div
+        class="text-danger small mt-1"
+        *ngIf="
+          transactionForm.get('createdAt')?.invalid && transactionForm.get('createdAt')?.touched
+        "
+      >
+        CreatedAt must be require.
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center mt-4">
+      <button type="button" class="btn btn-outline-secondary me-3 px-4" (click)="Cancle()">
+        Cancel
+      </button>
+      <button type="submit" class="btn btn-gradient px-4" [disabled]="transactionForm.invalid">
+        {{ transactionMode ? 'Update' : 'Save' }}
+      </button>
+    </div>
+  </form>
+</div>

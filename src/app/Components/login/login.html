@@ -1,0 +1,32 @@
+<div class="transaction-form-container d-flex justify-content-center align-items-center vh-100">
+  <div class="custom-form-wrapper p-4 shadow-lg rounded-4">
+    <h4 class="form-title text-center mb-4 text-black">Login</h4>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="custom-form">
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-muted" for="email">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control form-control-lg"
+          id="email"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-muted" for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control form-control-lg"
+          id="password"
+          placeholder="password"
+        />
+      </div>
+      <button type="submit" class="btn btn-gradient w-100 py-2" [disabled]="loginForm.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
